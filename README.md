@@ -19,9 +19,9 @@ In today's world, where environmental concerns are on the rise, we need a soluti
 ## Installation
 Follow these steps to set up the Sustainable World app:
 
-1. **Clone the Project:** Clone the repository to your local machine using the following command:
+1. **Clone the Project:** Clone this repository to your local machine.
 
-2. **Setup AWS Amplify:** Add your own `amplifyconfiguration.dart` file to configure AWS Amplify services for your app.
+2. **Setup AWS Amplify:** Add your own `amplifyconfiguration.dart` file to configure AWS Amplify services for your app. [AWS Amplify](https://docs.amplify.aws/cli/start/install/)
 
 3. **Stripe Payment Setup (Optional):** If you want to use Stripe payment integration, update the `.env` file with your Stripe credentials. If you don't wish to use Stripe, you can remove the references to Stripe from the project.
 
