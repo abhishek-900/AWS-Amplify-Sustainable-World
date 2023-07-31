@@ -1,4 +1,4 @@
-# Sustainable World - A Greener Tomorrow
+# Sustainable World Flutter App - A Greener Tomorrow
 
 In today's world, where environmental concerns are on the rise, we need a solution that promotes responsible waste management and recycling. That's where "Sustainable World" comes in. It's a mobile app that connects people and NGOs, making it easy to recycle and dispose of items responsibly. With this app, we aim to create a greener and more sustainable planet by empowering individuals and organizations to take active steps toward environmental preservation. Let's work together to shape a cleaner, healthier future for all. Join us in making a difference and creating a better world for generations to come.
 
@@ -27,12 +27,12 @@ Follow these steps to set up the Sustainable World app:
 Use the following test credentials to access different roles in the app:
 
 - **Disposer Role**
-- Email: abhishek.work08@gmail.com
-- Password: 12345678
+  - Email: abhishek.work08@gmail.com
+  - Password: 12345678
 
 - **Recycler Role**
-- Email: sarthakagrawal1296@gmail.com
-- Password: 12345678
+  - Email: sarthakagrawal1296@gmail.com
+  - Password: 12345678
 
 ## Disposers
 As a Disposer, you are an essential part of the Sustainable World community. Disposers are individuals who seek responsible ways to manage waste, including organic leftovers, old clothing, leftover food, electronic devices, and more. By listing your items on the app, you can find sustainable solutions for recycling and repurposing.
