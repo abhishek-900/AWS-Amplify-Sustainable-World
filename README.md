@@ -105,7 +105,7 @@ The Sustainable World app is built using the following technologies:
 ## References
 - [GitHub Repository](https://github.com/abhishek-900/AWS-Amplify-Sustainable-World)
 - [Video Url](https://www.sustainableworldapp.com)
-- [AWS Amplify Domain](https://346661771235.signin.aws.amazon.com/console)
+- [AWS Amplify Domain](https://eu-north-1.admin.amplifyapp.com/admin/d3ig1zmjoexlde/staging/home)
 - [Hashnode Domain](https://makeitsimple.hashnode.dev/)
 - **Team Members:** Abhishek Singh, Sarthak Agrawal, Anmol Jain, Deeshant Kotnala
 
