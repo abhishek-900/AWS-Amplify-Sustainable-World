@@ -1,0 +1,39 @@
+{
+  "staging": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-sustainableworld-staging-53318-authRole",
+      "UnauthRoleArn": "arn:aws:iam::346661771235:role/amplify-sustainableworld-staging-53318-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::346661771235:role/amplify-sustainableworld-staging-53318-authRole",
+      "Region": "eu-north-1",
+      "DeploymentBucketName": "amplify-sustainableworld-staging-53318-deployment",
+      "UnauthRoleName": "amplify-sustainableworld-staging-53318-unauthRole",
+      "StackName": "amplify-sustainableworld-staging-53318",
+      "StackId": "arn:aws:cloudformation:eu-north-1:346661771235:stack/amplify-sustainableworld-staging-53318/41f88b60-2d08-11ee-a678-0a406bace648",
+      "AmplifyAppId": "d3ig1zmjoexlde"
+    },
+    "categories": {
+      "auth": {
+        "sustainableworld9a1eb3e2": {}
+      },
+      "api": {
+        "SustainableWorld": {}
+      },
+      "function": {
+        "CognitoUserGroupDBMapping": {
+          "deploymentBucketName": "amplify-sustainableworld-staging-53318-deployment",
+          "s3Key": "amplify-builds/CognitoUserGroupDBMapping-41636665555055675031-build.zip"
+        }
+      },
+      "storage": {
+        "sustainableworld76114f50": {
+          "bucketName": "sustainableworld-storage-9ac56b2053318-staging",
+          "region": "eu-north-1"
+        },
+        "sustainableworld818c1a84": {
+          "bucketName": "sustainableworld-storage-9ac56b2053318-staging",
+          "region": "eu-north-1"
+        }
+      }
+    }
+  }
+}

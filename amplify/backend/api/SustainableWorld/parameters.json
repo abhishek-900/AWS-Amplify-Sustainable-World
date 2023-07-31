@@ -1,0 +1,12 @@
+{
+  "AppSyncApiName": "SustainableWorld",
+  "DynamoDBBillingMode": "PAY_PER_REQUEST",
+  "DynamoDBEnableServerSideEncryption": false,
+  "AuthCognitoUserPoolId": {
+    "Fn::GetAtt": [
+      "authsustainableworld9a1eb3e2",
+      "Outputs.UserPoolId"
+    ]
+  },
+  "AuthModeLastUpdated": "2023-07-28T18:16:32.893Z"
+}

@@ -1,0 +1,142 @@
+enum AttendeesStatus {
+  INTERESTED
+  ATTENDING
+  NOT_INTERESTED
+}
+
+type CampaignAttendees @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  status: AttendeesStatus
+  userdetailID: ID! @index(name: "byUserDetail")
+  campaignID: ID! @index(name: "byCampaign")
+}
+
+enum OrderStatus {
+  SUCCESS
+  PENDING
+  FAILED
+}
+
+type Order @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  orderDate: AWSDateTime
+  transactionId: String
+  status: OrderStatus
+  userdetailID: ID! @index(name: "byUserDetail")
+  product: Product @hasOne
+}
+
+enum UserType {
+  DISPOSER
+  RECYCLER
+}
+
+enum ProductStatus {
+  ACTIVE
+  SOLD
+  REMOVE
+}
+
+enum Visibility {
+  PUBLIC
+  SELECTIVE
+}
+
+enum ContributionType {
+  SELL
+  DONATE
+}
+
+type Product @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  description: String
+  contributionType: ContributionType
+  amount: Float
+  visibility: Visibility
+  status: ProductStatus
+  weight: Float
+  productLocation: String
+  producImages: [String]
+  productTags: [String]
+  userdetailID: ID! @index(name: "byUserDetail")
+  productcategoryID: ID! @index(name: "byProductCategory")
+  userdetails: [UserDetail] @manyToMany(relationName: "UserDetailProduct")
+}
+
+type ProductCategory @model @auth(rules: [{allow: public}]) {
+  id: ID!
+  title: String
+  description: String
+  imageUrl: String
+  isActive: Boolean
+  priority: Int
+  Products: [Product] @hasMany(indexName: "byProductCategory", fields: ["id"])
+}
+
+type UserDetail @model @auth(rules: [{allow: public}, {allow: owner}, {allow: private}]) {
+  id: ID!
+  Campaigns: [Campaign] @hasMany(indexName: "byUserDetail", fields: ["id"])
+  Articles: [Article] @hasMany(indexName: "byUserDetail", fields: ["id"])
+  email: String
+  Products: [Product] @hasMany(indexName: "byUserDetail", fields: ["id"])
+  profileImage: String
+  referralCode: String
+  companyName: String
+  companyAddress: String
+  companyRegistrationNumber: String
+  companyProfileImage: String
+  userType: UserType
+  contactNumber: String
+  firstName: String
+  lastName: String
+  activated: Boolean
+  SelectiveRecycler: [Product] @manyToMany(relationName: "UserDetailProduct")
+  Orders: [Order] @hasMany(indexName: "byUserDetail", fields: ["id"])
+  campaignAttendees: [CampaignAttendees] @hasMany(indexName: "byUserDetail", fields: ["id"])
+  address: String
+}
+
+enum CampaignStatus {
+  ACTIVE
+  INACTIVE
+}
+
+enum EventType {
+  OFFLINE
+  ONLINE
+}
+
+type Campaign @model @auth(rules: [{allow: public}, {allow: owner}, {allow: private}]) {
+  id: ID!
+  title: String
+  description: String
+  startDate: AWSDateTime
+  endDate: AWSDateTime
+  imageUrl: String
+  status: CampaignStatus
+  priority: Int
+  isVerified: Boolean
+  previewDate: AWSDateTime
+  longitude: String
+  latitude: String
+  address: String
+  eventType: EventType
+  attendeesCount: Int
+  currentUserAttending: Boolean
+  userdetailID: ID! @index(name: "byUserDetail")
+  campaignAttendees: [CampaignAttendees] @hasMany(indexName: "byCampaign", fields: ["id"])
+}
+
+type Article @model @auth(rules: [{allow: public}, {allow: private}, {allow: owner}]) {
+  id: ID!
+  title: String
+  decription: String
+  uploadDate: AWSDateTime
+  modifiedDate: AWSDateTime
+  imageUrl: String
+  isVerified: Boolean
+  isRemoved: Boolean
+  userdetailID: ID! @index(name: "byUserDetail")
+}
+ 

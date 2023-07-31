@@ -1,0 +1,150 @@
+{
+  "api": {
+    "SustainableWorld": {
+      "dependsOn": [
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sustainableworld9a1eb3e2"
+        }
+      ],
+      "output": {
+        "authConfig": {
+          "additionalAuthenticationProviders": [
+            {
+              "authenticationType": "AWS_IAM"
+            },
+            {
+              "authenticationType": "AMAZON_COGNITO_USER_POOLS",
+              "userPoolConfig": {
+                "userPoolId": "authsustainableworld9a1eb3e2"
+              }
+            }
+          ],
+          "defaultAuthentication": {
+            "apiKeyConfig": {
+              "apiKeyExpirationDays": 30,
+              "description": "api key description"
+            },
+            "authenticationType": "API_KEY"
+          }
+        }
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "AppSync"
+    }
+  },
+  "auth": {
+    "sustainableworld9a1eb3e2": {
+      "customAuth": false,
+      "dependsOn": [],
+      "frontendAuthConfig": {
+        "mfaConfiguration": "OFF",
+        "mfaTypes": [
+          "SMS"
+        ],
+        "passwordProtectionSettings": {
+          "passwordPolicyCharacters": [],
+          "passwordPolicyMinLength": 8
+        },
+        "signupAttributes": [
+          "EMAIL"
+        ],
+        "socialProviders": [],
+        "usernameAttributes": [
+          "EMAIL"
+        ],
+        "verificationMechanisms": [
+          "EMAIL"
+        ]
+      },
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "CognitoUserGroupDBMapping": {
+      "build": true,
+      "dependsOn": [
+        {
+          "attributes": [
+            "GraphQLAPIIdOutput",
+            "GraphQLAPIEndpointOutput",
+            "GraphQLAPIKeyOutput"
+          ],
+          "category": "api",
+          "resourceName": "SustainableWorld"
+        },
+        {
+          "attributes": [
+            "UserPoolId"
+          ],
+          "category": "auth",
+          "resourceName": "sustainableworld9a1eb3e2"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_CognitoUserGroupDBMapping_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CognitoUserGroupDBMapping"
+        }
+      ]
+    },
+    "AMPLIFY_function_CognitoUserGroupDBMapping_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "CognitoUserGroupDBMapping"
+        }
+      ]
+    },
+    "AMPLIFY_storage_sustainableworld76114f50_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "sustainableworld76114f50"
+        }
+      ]
+    },
+    "AMPLIFY_storage_sustainableworld76114f50_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "sustainableworld76114f50"
+        }
+      ]
+    },
+    "AMPLIFY_storage_sustainableworld818c1a84_bucketName": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "sustainableworld818c1a84"
+        }
+      ]
+    },
+    "AMPLIFY_storage_sustainableworld818c1a84_region": {
+      "usedBy": [
+        {
+          "category": "storage",
+          "resourceName": "sustainableworld818c1a84"
+        }
+      ]
+    }
+  },
+  "storage": {
+    "sustainableworld818c1a84": {
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "S3",
+      "serviceType": "imported"
+    }
+  }
+}

@@ -1,0 +1,17 @@
+{
+  "version": "string",
+  "triggerSource": "PostConfirmation_ConfirmSignUp",
+  "region": "string",
+  "userPoolId": "string",
+  "userName": "testUser",
+  "callerContext": {
+    "awsSdkVersion": "string",
+    "clientId": "string"
+  },
+  "request": {
+    "userAttributes": {
+      "email" : "testUser@gmail.com"
+    }
+  },
+  "response": {}
+}
