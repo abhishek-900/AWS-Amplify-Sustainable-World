@@ -1,6 +1,7 @@
 # Sustainable World Flutter App - A Greener Tomorrow
 
-![Untitled design](https://github.com/abhishek-900/AWS-Amplify-Sustainable-World/assets/45100807/548bf1b4-62cb-4b5e-a377-989914cbe085)
+![Untitled design](https://github.com/abhishek-900/AWS-Amplify-Sustainable-World/assets/45100807/aa4b8fb4-7582-4a36-bdc4-1f4b5d9132e0)
+
 
 In today's world, where environmental concerns are on the rise, we need a solution that promotes responsible waste management and recycling. That's where "Sustainable World" comes in. It's a mobile app that connects people and NGOs, making it easy to recycle and dispose of items responsibly. With this app, we aim to create a greener and more sustainable planet by empowering individuals and organizations to take active steps toward environmental preservation. Let's work together to shape a cleaner, healthier future for all. Join us in making a difference and creating a better world for generations to come.
 
